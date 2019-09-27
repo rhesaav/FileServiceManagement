@@ -1,51 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:background="#f4f5f9"
+    android:fitsSystemWindows="true"
     tools:context=".LoginActivity">
 
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="65dp"
-        android:src="@drawable/main_logo" />
+        android:orientation="vertical"
+        android:paddingLeft="24dp"
+        android:paddingTop="56dp"
+        android:paddingRight="24dp">
 
-    <EditText
-        android:id="@+id/loginemail"
-        android:layout_width="225dp"
-        android:layout_height="45dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="218dp"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="122dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/main_logo" />
 
-    <EditText
-        android:id="@+id/loginpassword"
-        android:layout_width="225dp"
-        android:layout_height="45dp"
-        android:layout_alignEnd="@+id/signin"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="237dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword" />
+        <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
 
-    <Button
-        android:id="@+id/signin"
-        android:layout_width="225dp"
-        android:layout_height="35dp"
-        android:layout_alignStart="@+id/loginemail"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginBottom="177dp"
-        android:background="@android:color/holo_blue_dark"
-        android:text="Log In"
-        android:textColor="@android:color/white" />
+            <EditText
+                android:id="@+id/loginemail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="textEmailAddress" />
+        </android.support.design.widget.TextInputLayout>
 
-</RelativeLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/loginpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/signin"
+                android:hint="Password"
+                android:inputType="textPassword" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btnlogin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="#173eef"
+            android:padding="12dp"
+            android:text="Login"
+            android:textColor="#ffff"></android.support.v7.widget.AppCompatButton>
+    </LinearLayout>
+</ScrollView>

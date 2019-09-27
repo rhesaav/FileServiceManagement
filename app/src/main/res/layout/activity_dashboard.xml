@@ -7,9 +7,33 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="95dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:id="@+id/txtdashboard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_chettan"
+                android:text="Dashboard"
+                android:textColor="#000"
+                android:textSize="32sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtdashboard"
+                android:fontFamily="@font/andika"
+                android:text="Selamat Pagi "
+                android:textColor="#000"
+                android:textSize="22sp" />
+        </RelativeLayout>
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,6 +48,8 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="2"
                 android:layout_margin="12dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
                 apps:cardCornerRadius="12dp"
                 apps:cardElevation="10dp">
 
@@ -57,6 +83,8 @@
                 android:layout_columnWeight="2"
                 android:layout_margin="12dp"
                 apps:cardCornerRadius="12dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
                 apps:cardElevation="10dp">
 
                 <LinearLayout
@@ -86,6 +114,8 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="2"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
                 android:layout_margin="12dp"
                 apps:cardCornerRadius="12dp"
                 apps:cardElevation="10dp">
@@ -119,6 +149,8 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="2"
                 android:layout_margin="12dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
                 apps:cardCornerRadius="12dp"
                 apps:cardElevation="10dp">
 
