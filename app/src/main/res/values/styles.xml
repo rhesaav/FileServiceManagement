@@ -17,13 +17,17 @@
         <item name="tabPaddingEnd">8dp</item>
         <item name="tabBackground">?attr/selectableItemBackground</item>
         <item name="tabTextAppearance">@style/TabTextAppearance</item>
-        <item name="tabSelectedTextColor">@android:color/white</item>
+        <item name="tabSelectedTextColor">@android:color/black</item>
     </style>
 
     <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">@dimen/text_tab_size</item>
         <item name="android:textColor">@color/color_white_semitransparent</item>
         <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="test" parent="android:Theme">
+        <item name="android:backgroundDimEnabled">false</item>
     </style>
 
 </resources>
