@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReportActivity">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:alignmentMode="alignMargins"
+        android:columnCount="1"
+        android:columnOrderPreserved="false"
+        android:rowCount="3">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="2"
+            android:layout_margin="32dp"
+            android:clickable="true"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="10dp">
+
+            <LinearLayout
+                android:layout_width="375dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Order ID"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="2"
+            android:layout_margin="32dp"
+            android:layout_marginTop="-16dp"
+            android:clickable="true"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="10dp">
+
+            <LinearLayout
+                android:layout_width="375dp"
+                android:layout_height="wrap_content"
+                android:background="#eeeeee"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Deskripsi Diagnosa"
+                    android:textColor="#fd9d0e"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:layout_width="314dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="26dp"
+                    android:background="#ffffff" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dilaporkan Gagal"
+                    android:textColor="#fd9d0e"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:layout_width="314dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="26dp"
+                    android:background="#ffffff" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aksi Yang Diambil"
+                    android:textColor="#fd9d0e"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:layout_width="314dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="26dp"
+                    android:background="#ffffff" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Catatan"
+                    android:textColor="#fd9d0e"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:layout_width="314dp"
+                    android:layout_height="62dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="26dp"
+                    android:background="#ffffff"
+                    android:inputType="textMultiLine" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bukti"
+                    android:textColor="#fd9d0e"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/click_image"
+                    android:layout_width="314dp"
+                    android:layout_height="82dp"
+                    android:layout_marginTop="2dp" />
+
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </GridLayout>
+
+    <Button
+        android:id="@+id/camera_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="138dp"
+        android:background="@drawable/mybutton"
+        android:text="add"
+        android:textColor="#fff" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/button2"
+        android:layout_width="335dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/mybutton1"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="Kirim Laporan"
+        android:textColor="#fff" />
+
+</RelativeLayout>

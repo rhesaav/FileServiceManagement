@@ -5,4 +5,7 @@
     <color name="colorAccent">#D81B60</color>
     <color name="pink">#2270ff</color>
     <color name="color_white_semitransparent">#9967686b</color>
+    <color name="colorNavigationText">#000</color>
+
 </resources>
+
