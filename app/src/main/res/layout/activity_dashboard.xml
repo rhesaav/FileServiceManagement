@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:apps="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -178,6 +179,121 @@
             </android.support.v7.widget.CardView>
 
         </GridLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff"
+            android:elevation="2dp">
+
+            <TextView
+                android:id="@+id/task"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/baloo_chettan"
+                android:text="Task"
+                android:textColor="#000"
+                android:textSize="25dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="240dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="2"
+                android:layout_below="@+id/task"
+                android:layout_margin="32dp"
+                android:layout_marginTop="5dp"
+                android:clickable="true"
+                apps:cardCornerRadius="12dp"
+                apps:cardElevation="10dp">
+
+                <RelativeLayout
+                    android:layout_width="375dp"
+                    android:layout_height="match_parent"
+                    android:padding="16dp">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="2"
+                        android:background="#2f42e9"
+                        android:clickable="true"
+                        apps:cardCornerRadius="12dp"
+                        apps:cardElevation="5dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/pink"
+                            android:padding="5dp"
+                            android:text="#FADK21"
+                            android:textAlignment="center"
+                            android:textColor="#fff"
+                            android:textSize="15dp" />
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="2"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="75dp"
+                        android:clickable="true"
+                        apps:cardCornerRadius="12dp"
+                        apps:cardElevation="2dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:background="#f21a1a"
+                            android:padding="5dp"
+                            android:text="High"
+                            android:textAlignment="center"
+                            android:textColor="#fff"
+                            android:textSize="15dp" />
+                    </android.support.v7.widget.CardView>
+
+                    <Button
+                        android:id="@+id/camera_button"
+                        android:layout_width="55dp"
+                        android:layout_height="35dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginRight="80dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/pink"
+                        android:elevation="2dp"
+                        android:text="Detail"
+                        android:textColor="#fff"
+                        android:textSize="12dp" />
+
+
+                    <!--<ImageView-->
+                    <!--android:id="@+id/phone"-->
+                    <!--android:layout_width="38dp"-->
+                    <!--android:layout_height="57dp"-->
+                    <!---->
+                    <!--android:layout_marginLeft="73dp"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:layout_toRightOf="@id/phonenn"-->
+                    <!--android:layout_marginBottom="-2dp"-->
+                    <!--android:src="@drawable/phone" />-->
+
+                </RelativeLayout>
+
+                <LinearLayout
+
+                    android:layout_width="375dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
 
     </LinearLayout>
 
