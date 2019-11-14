@@ -11,16 +11,15 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class GETAPIRequest {
-
-    public void request(final Context context, final FetchDataListener listener, final String ApiURL) {
+public class POSTAPIRequest {
+    public void request(final Context context, final FetchDataListener listener, JSONObject params, final String ApiURL) {
         if (listener != null) {
             listener.onFetchStart();
         }
-
-        String baseUrl = "https://api.tadabase.io/api/v1/data-tables";
+        String baseUrl = baseUrl = "";
         String url = baseUrl + ApiURL;
-        JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.GET, url, null,
+
+        JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, url, params,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
@@ -33,6 +32,7 @@ public class GETAPIRequest {
                                 } else {
                                     listener.onFetchComplete(null);
                                 }
+
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -48,12 +48,10 @@ public class GETAPIRequest {
                     String errorMessage = "";
                     try {
                         JSONObject errorJson = new JSONObject(volley_error.getMessage());
-                        if (errorJson.has("error"))
-                            errorMessage = errorMessage = errorJson.getString("error");
+                        if (errorJson.has("error")) errorMessage = errorJson.getString("error");
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-
                     if (errorMessage.isEmpty()) {
                         errorMessage = volley_error.getMessage();
                     }
@@ -63,7 +61,6 @@ public class GETAPIRequest {
                 }
             }
         });
-
         //  RequestQueueService.getInstance(context).addToRequestQueue(postRequest.setShouldCache(false));
     }
 }

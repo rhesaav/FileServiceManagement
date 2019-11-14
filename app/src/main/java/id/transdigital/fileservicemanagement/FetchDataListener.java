@@ -6,7 +6,7 @@ public interface FetchDataListener {
 
     void onFetchComplete(JSONObject data);
 
-    void onStringFailure(String msg);
+    void onFetchFailure(String msg);
 
     void onFetchStart();
 }

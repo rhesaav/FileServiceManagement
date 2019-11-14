@@ -29,14 +29,14 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+public class UpdateClass extends AppCompatActivity {
     RequestQueue rq;
     String table_id, record_id, app_id, app_key, app_secret;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.update_scr);
 
         table_id = "o6WQb5NnBZ";
         record_id = "DVWQWRNZ49";
@@ -44,35 +44,35 @@ public class MainActivity extends AppCompatActivity {
         app_key = "52gv3cMRZYoQ";
         app_secret = "tf5VQXHkfLgnKGlwP7h1naDMg5NVdWZC";
 
-        final ProgressBar progressBar = findViewById(R.id.hfc_progressbar);
+        final ProgressBar progressBar = findViewById(R.id.upd_progressbar);
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
             Drawable wrapDrawable = DrawableCompat.wrap(progressBar.getIndeterminateDrawable());
-            DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(MainActivity.this, android.R.color.holo_red_light));
+            DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(UpdateClass.this, android.R.color.holo_red_light));
             progressBar.setIndeterminateDrawable(DrawableCompat.unwrap(wrapDrawable));
         } else {
-            progressBar.getIndeterminateDrawable().setColorFilter(ContextCompat.getColor(MainActivity.this, android.R.color.holo_red_light), PorterDuff.Mode.SRC_IN);
+            progressBar.getIndeterminateDrawable().setColorFilter(ContextCompat.getColor(UpdateClass.this, android.R.color.holo_red_light), PorterDuff.Mode.SRC_IN);
         }
 
-        Button updBtn = findViewById(R.id.cnc_button_update);
-        updBtn.setOnClickListener(new View.OnClickListener() {
+        Button backBtn = findViewById(R.id.cnc_button);
+        backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent postTripIntent = new Intent(MainActivity.this, UpdateClass.class);
-                MainActivity.this.startActivity(postTripIntent);
+                Intent postTripIntent = new Intent(UpdateClass.this, MainActivity.class);
+                UpdateClass.this.startActivity(postTripIntent);
             }
         });
 
-        Button btnList = findViewById(R.id.cnc_button);
-
+        Button btnUpdate = findViewById(R.id.cnc_button_update);
         final TextView txt = findViewById(R.id.textView);
 
-        btnList.setOnClickListener(new View.OnClickListener() {
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 progressBar.setVisibility(View.VISIBLE);
-                rq = Volley.newRequestQueue(MainActivity.this);
+                rq = Volley.newRequestQueue(UpdateClass.this);
 
-                StringRequest getCntryReq = new StringRequest(Request.Method.GET, "https://api.tadabase.io/api/v1/data-tables",
+                StringRequest getCntryReq = new StringRequest(Request.Method.POST,
+                        "https://api.tadabase.io/api/v1/data-tables/" + table_id + "/records/" + record_id,
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
@@ -83,14 +83,15 @@ public class MainActivity extends AppCompatActivity {
                                     e1.printStackTrace();
                                 }
                                 progressBar.setVisibility(View.GONE);
+
                             }
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         if (error instanceof TimeoutError) {
-                            Toast.makeText(getApplicationContext(), "Server response tak too long", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Server response take too long", Toast.LENGTH_LONG).show();
                         } else if (error instanceof NoConnectionError) {
-                            Toast.makeText(getApplicationContext(), "No connectionto server", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "No connection to server", Toast.LENGTH_LONG).show();
                         }
                         progressBar.setVisibility(View.GONE);
                     }
@@ -98,10 +99,16 @@ public class MainActivity extends AppCompatActivity {
                 ) {
                     @Override
                     public Map<String, String> getHeaders() {
-                        Map<String, String> params = new HashMap<String, String>();
-                        params.put("X-Tadabase-App-id", app_id);
-                        params.put("X-Tadabase-App-Key", app_key);
-                        params.put("X-Tadabase-App-Secret", app_secret);
+                        Map<String, String> headers = new HashMap<>();
+                        headers.put("X-Tadabase-App-id", app_id);
+                        headers.put("X-Tadabase-App-Key", app_key);
+                        headers.put("X-Tadabase-App-Secret", app_secret);
+                        return headers;
+                    }
+
+                    protected Map<String, String> getParams() {
+                        Map<String, String> params = new HashMap<>();
+                        params.put("field_22", "coba dari android");
                         return params;
                     }
                 };
@@ -110,4 +117,3 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
-
